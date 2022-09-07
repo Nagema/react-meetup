@@ -3,7 +3,6 @@ import MeetupItem from "../components/meetups/MeetupItem";
 import { Favorite } from '../context/FavoriteContext';
 import classes from "./../components/meetups/MeetupList.module.css";
 
-
 export default function FavoritesPage() {
 
   const { favs } = useContext(Favorite);
