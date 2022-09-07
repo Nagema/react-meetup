@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
 import { Meetups } from '../../context/MeetupsContext';
@@ -6,18 +6,41 @@ import { Meetups } from '../../context/MeetupsContext';
 export default function NewMeetupForm() {
 
   const { 
-    title,
-    image,
-    address,
-    description,
-    onChangeTitle,
-    onChangeImage,
-    onChangeAddress,
-    onChangeDescription 
+    meetups,
+    addMeetup 
   } = useContext(Meetups);
+
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [address, setAddress] = useState("");
+  const [description, setDescription] = useState("");
+
+  const onChangeTitle = event => {
+    setTitle(event.target.value);
+  };
+  const onChangeImage = event => {
+    setImage(event.target.value);
+  };
+  const onChangeAddress = event => {
+    setAddress(event.target.value);
+  };
+  const onChangeDescription = event => {
+    setDescription(event.target.value);
+  };
 
   function submitHandler(event) {
     event.preventDefault();
+    addMeetup({
+      id: meetups.length + 1,
+      title,
+      image,
+      address,
+      description
+    });
+    setTitle('');
+    setImage('');
+    setAddress('');
+    setDescription('')
   }
 
   return (

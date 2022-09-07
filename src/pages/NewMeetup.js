@@ -1,5 +1,5 @@
+import React from 'react';
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
-import React, { useState }  from 'react';
 
 export default function NewMeetupsPage() {
 
