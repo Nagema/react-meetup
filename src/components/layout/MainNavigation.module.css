@@ -7,9 +7,24 @@
     background-color: #77002e;
     padding: 0 10%;
   }
+
+  .stickyHeader {
+    position: sticky;
+    top: 0px;
+    height: 6rem;
+    transition-property: all; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
   
+  .stickyHeaderDown {
+    position: sticky;
+    top: -6rem;
+    height: 6rem;
+  }
+
   .logo {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: bold;
   }
@@ -28,7 +43,7 @@
   
   .header a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fcb8d2;
   }
   
