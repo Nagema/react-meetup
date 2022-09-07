@@ -1,8 +1,8 @@
 import React, { createContext, useState } from 'react'
 
-export const Favorite = createContext();
+export const Meetups = createContext();
 
-export const FavoriteProvider = ({children}) => {
+export const MeetupsProvider = ({children}) => {
 
     const [favs, setFavs] = useState([]);
 
@@ -23,10 +23,10 @@ export const FavoriteProvider = ({children}) => {
     }
 
   return (
-    <Favorite.Provider value={{isItFav, toggleFav, favItems, favs}}>
+    <Meetups.Provider value={{isItFav, toggleFav, favItems, favs}}>
         {children}
-    </Favorite.Provider>
+    </Meetups.Provider>
   )
 }
 
-export default FavoriteProvider
+export default MeetupsProvider

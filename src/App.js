@@ -4,13 +4,13 @@ import FavoritesPage from "./pages/Favorites";
 import NewMeetupsPage from "./pages/NewMeetup";
 import MainNavigation from "./components/layout/MainNavigation";
 import Layout from "./components/layout/Layout";
-import FavoriteProvider from './context/FavoriteContext';
+import MeetupsProvider from './context/MeetupsContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div data-test="app">
-      <FavoriteProvider>
+      <MeetupsProvider>
         <BrowserRouter>
           <Fragment>
             <MainNavigation />
@@ -42,7 +42,7 @@ function App() {
             </Routes>
           </Fragment>
         </BrowserRouter>
-      </FavoriteProvider>
+      </MeetupsProvider>
     </div>
   );
 }

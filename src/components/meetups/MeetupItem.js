@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import classes from "./MeetupItem.module.css";
-import { Favorite } from '../../context/FavoriteContext';
+import { Meetups } from '../../context/MeetupsContext';
 import Card from "../ui/Card";
 
 export default function MeetupItem({meetUp}) {
-  const { toggleFav, isItFav } = useContext(Favorite);
+  const { toggleFav, isItFav } = useContext(Meetups);
 
   return (
         <li className={classes.item} data-test='meet-up-item'>

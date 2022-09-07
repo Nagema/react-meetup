@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Favorite } from '../../context/FavoriteContext';
+import { Meetups } from '../../context/MeetupsContext';
 import classes from "./MainNavigation.module.css";
 
 export default function MainNavigation() {
 
-  const { favItems } = useContext(Favorite);
+  const { favItems } = useContext(Meetups);
   return (
     <header className={classes.header} data-test="navigation-header">
       <div className={classes.logo}>React Meetups</div>
