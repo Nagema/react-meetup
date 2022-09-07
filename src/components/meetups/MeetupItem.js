@@ -1,30 +1,28 @@
-import { useFetch } from "./../../util-hooks/useFetch";
+import React, { useContext } from 'react';
 import classes from "./MeetupItem.module.css";
+import { Favorite } from '../../context/FavoriteContext';
 import Card from "../ui/Card";
 
-export default function MeetupItem() {
-  const { data } = useFetch({
-    url: "/data.json",
-  });
-
-  if (!data) return <p>Loading...</p>;
-  let [item] = data;
+export default function MeetupItem({meetUp}) {
+  const { toggleFav, isItFav } = useContext(Favorite);
 
   return (
-    <li className={classes.item} data-test='meet-up-item'>
-      <Card>
-        <div className={classes.image}>
-          <img src={item.image} alt={item.title} />
-        </div>
-        <div className={classes.content}>
-          <h3>{item.title}</h3>
-          <address>{item.address}</address>
-          <p>{item.description}</p>
-        </div>
-        <div className={classes.actions}>
-          <button>Add to favorites</button>
-        </div>
-      </Card>
-    </li>
+        <li className={classes.item} data-test='meet-up-item'>
+          <Card>
+            <div className={classes.image}>
+              <img src={meetUp.image} alt={meetUp.title} />
+            </div>
+              <div className={classes.content}>
+                <h3>{meetUp.title}</h3>
+                <address>{meetUp.address}</address>
+                <p>{meetUp.description}</p>
+              </div>
+              <div className={classes.actions}>
+              <button onClick={() => toggleFav(meetUp)}>
+                {isItFav(meetUp) ? 'Remove from favorites' :'Add to favorites'}
+              </button>
+            </div>
+          </Card>
+        </li>
   );
 }
