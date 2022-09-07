@@ -1,3 +1,9 @@
+### Web description
+this app will show you all existing meetups events and will let you to create others, you can also add them as favorites and you can check them once you click on the favorite link that you can find on the header. 
+
+ ![web-video]![Uploading meetup-web.gif…]()
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
