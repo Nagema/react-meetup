@@ -4,6 +4,25 @@ export const Meetups = createContext();
 
 export const MeetupsProvider = ({children}) => {
 
+  const [title, setTitle] = useState("");
+  const [image, setImage] = useState("");
+  const [address, setAddress] = useState("");
+  const [description, setDescription] = useState("");
+  
+
+  const onChangeTitle = event => {
+    setTitle(event.target.value);
+  };
+  const onChangeImage = event => {
+    setImage(event.target.value);
+  };
+  const onChangeAddress = event => {
+    setAddress(event.target.value);
+  };
+  const onChangeDescription = event => {
+    setDescription(event.target.value);
+  };
+
     const [favs, setFavs] = useState([]);
 
     const isItFav = (item) => {
@@ -23,7 +42,7 @@ export const MeetupsProvider = ({children}) => {
     }
 
   return (
-    <Meetups.Provider value={{isItFav, toggleFav, favItems, favs}}>
+    <Meetups.Provider value={{isItFav, toggleFav, onChangeTitle, onChangeImage, onChangeAddress, onChangeDescription, favItems, favs, title, image, address, description}}>
         {children}
     </Meetups.Provider>
   )

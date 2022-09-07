@@ -1,17 +1,21 @@
+import React, { useContext } from 'react';
 import Card from "../ui/Card";
 import classes from "./NewMeetupForm.module.css";
+import { Meetups } from '../../context/MeetupsContext';
 
-export default function NewMeetupForm({
-  title,
-  image,
-  address,
-  description,
-  onChangeTitle,
-  onChangeImage,
-  onChangeAddress,
-  onChangeDescription
+export default function NewMeetupForm() {
 
-}) {
+  const { 
+    title,
+    image,
+    address,
+    description,
+    onChangeTitle,
+    onChangeImage,
+    onChangeAddress,
+    onChangeDescription 
+  } = useContext(Meetups);
+
   function submitHandler(event) {
     event.preventDefault();
   }
