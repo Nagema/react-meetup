@@ -13,20 +13,12 @@ import Layout from "./components/layout/Layout";
 const setup = () => shallow(<App />);
 
 test("renders App without crashing", () => {
-  const wrapper = setup();
-   //console.log(wrapper.debug());
+  const wrapper = setup();  
   expect(wrapper.exists()).toBe(true);
 });
 
 test("renders the navigation component", () => {
-  const wrapper = setup(<MainNavigation/>);
+  const wrapper = setup(); 
 
-  expect(wrapper.length).toBe(1);
-});
-
-test("renders the Layout component", () => {
-
-  const wrapper = setup(<Layout/>);
-  
-  expect(wrapper.length).toBe(1);
+  expect(wrapper.find(MainNavigation).length).toBe(1);
 });
