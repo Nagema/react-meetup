@@ -1,6 +1,22 @@
 ### Web description
 this app will show you all existing meetups events and will let you to create others, you can also add them as favorites and you can check them once you click on the favorite link that you can find on the header. 
 
+### implemented solutions
+
+In order to regroup the information, there's been a context.js created name meetupContext,  where you can find the logic for the following methods and funtions
+
+-Getting data and new data for the meetups
+
+- Toogle for favorite button 
+
+- Adding new meetups information
+
+It has been replace <a> tags to  <Links/> and also added the Router to link the routes 
+
+In order to add animation to the header it has been created a hook called useScrollDirection.js that returns if the scroll is going down or up
+
+Finally the application tests have been fix by adding a function recursiveGetPathMap to identify the components inside the Router
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
