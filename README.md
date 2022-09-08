@@ -5,13 +5,13 @@ this app will show you all existing meetups events and will let you to create ot
 
 In order to regroup the information, there's been a context.js created name meetupContext,  where you can find the logic for the following methods and funtions
 
--Getting data and new data for the meetups
+- Getting data and new data for the meetups
 
 - Toogle for favorite button 
 
 - Adding new meetups information
 
-It has been replace <a> tags to  <Links/> and also added the Router to link the routes 
+It also has been replace <a> tags to  <Links/> and added the Router to link the routes 
 
 In order to add animation to the header it has been created a hook called useScrollDirection.js that returns if the scroll is going down or up
 
