@@ -5,12 +5,16 @@
 Revisamos el pseudocódigo de la operación getTotal de la clase RegisteredUser y nos preocupa que el su diseño sea un poco frágil ya que no vemos claro si contempla los posibles escenarios futuros y su impacto:
 1. Que problemas detectas en la operación y razona la respuesta 
 
-- Si existiera algun otro escenario tal cual como esta realizaria un calculo que no es correcto.
+- Si existiera algun otro escenario tal cual como esta, realizaria un calculo que no es correcto.
+  Al tratarse de un calculo de precios, esta funcion deberia ser especialmente resiliente para asegurar de que no se esta calculando
+  un precio incorrecto.
+
 
 2. Propón una solución alternativa (también en pseudocódigo del mismo estilo) que corrija los problemas de la
 operación getTotal de RegisteredUser que has detectado en la pregunta anterior. Realiza todos los cambios que consideres necesarios en cualquiera de las clases del modelo del enunciado.
 
-- Esta solucion lanza una excepcion, en lugar de calcular un total que no corresponde a ningun  servicio.
+- Para evitar calculos erroneos lanzamos una excepcion (throw new Error()) que devolvera un mensaje de error si no se tratara de ninguno de los servicios
+  referenciados.
 
 class RegisteredUser {
     constructor(service = []){
@@ -21,7 +25,7 @@ class RegisteredUser {
         this.services.forEach(service => {
             let multimediaContent = service.getMultimediaContent();
 
-            if(typeof service === StreamingService){
+            if(typeof service === StreamingService) {
                 total += multimediaContent.streamingPrice;
             } else if(typeof service === DownloadService) {
                 total += multimediaContent.downloadPrice;
