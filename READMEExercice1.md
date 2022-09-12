@@ -5,16 +5,14 @@
 Revisamos el pseudocódigo de la operación getTotal de la clase RegisteredUser y nos preocupa que el su diseño sea un poco frágil ya que no vemos claro si contempla los posibles escenarios futuros y su impacto:
 1. Que problemas detectas en la operación y razona la respuesta 
 
-- Si existiera algun otro escenario tal cual como esta, realizaria un calculo que no es correcto.
-  Al tratarse de un calculo de precios, esta funcion deberia ser especialmente resiliente para asegurar de que no se esta calculando
+- Si existiera algun otro escenario actualmente realizaria un calculo que no es correcto.
+  Al tratarse de un calculo de precios, esta función deberia ser especialmente resiliente para asegurar de que no se esta calculando
   un precio incorrecto.
-
 
 2. Propón una solución alternativa (también en pseudocódigo del mismo estilo) que corrija los problemas de la
 operación getTotal de RegisteredUser que has detectado en la pregunta anterior. Realiza todos los cambios que consideres necesarios en cualquiera de las clases del modelo del enunciado.
 
-- Para evitar calculos erroneos lanzamos una excepcion (throw new Error()) que devolverá un mensaje de error si no se tratara de ninguno de los servicios
-  referenciados.
+- Para evitar calculos erroneos lanzamos una excepción (throw new Error()) que devolverá en este caso un mensaje de error y parará la ejecución si no se     tratara de ninguno de los servicios referenciados.
 
 class RegisteredUser {
     constructor(service = []){
