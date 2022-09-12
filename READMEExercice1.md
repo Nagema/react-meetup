@@ -13,7 +13,7 @@ Revisamos el pseudocódigo de la operación getTotal de la clase RegisteredUser 
 2. Propón una solución alternativa (también en pseudocódigo del mismo estilo) que corrija los problemas de la
 operación getTotal de RegisteredUser que has detectado en la pregunta anterior. Realiza todos los cambios que consideres necesarios en cualquiera de las clases del modelo del enunciado.
 
-- Para evitar calculos erroneos lanzamos una excepcion (throw new Error()) que devolvera un mensaje de error si no se tratara de ninguno de los servicios
+- Para evitar calculos erroneos lanzamos una excepcion (throw new Error()) que devolverá un mensaje de error si no se tratara de ninguno de los servicios
   referenciados.
 
 class RegisteredUser {
